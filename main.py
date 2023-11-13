@@ -1,3 +1,19 @@
-nombre=input("Ingrese su nombre de usuario: ")
+import platform
+import os
+import keyboard
 
-print("Bienvenido al laberinto de las fantasias "+nombre)
+rep = 0
+
+def limpiar_pantalla():
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+while rep <= 50:
+    key_event = keyboard.read_event()
+    key = key_event.name
+    if key == 'n':
+        limpiar_pantalla()
+        rep += 1
+        print(rep)
